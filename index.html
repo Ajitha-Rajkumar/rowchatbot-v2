@@ -301,8 +301,7 @@
                 sub_options: [
                     { label: "Create ROW Authority", action: "authority_create" },
                     { label: "Vendor Contract Mapping", action: "authority_vendor" },
-                    { label: "Manage Authority Cost", action: "rate_update" },
-                    { label: "Approve Authority Cost", action: "rate_approve" }
+                    { label: "Manage Authority Cost", action: "rate_update" }
                 ]
             },
             authority_create: {
@@ -356,8 +355,8 @@
 
 <div class="step-card"><div class="step-row"><span class="step-num">3</span><span>Fill in the rate configuration:<ul class="field-list">
 <li class="mandatory">Methodology (Aerial, Common, Crossing, HDD, Micro Trenching, Moling, Open Trenching, UG)</li>
-<li class="mandatory">Construction Type</li>
-<li class="mandatory">Ownership</li>
+<li class="mandatory">Construction Type (HDD, MT, OT)</li>
+<li class="mandatory">Ownership (OWN, LEASED)</li>
 <li class="mandatory">Fixed Charges</li>
 <li>Fixed Charges Higher Variance (%)</li>
 <li>Fixed Charges Lower Variance (% in Negative)</li>
@@ -368,23 +367,17 @@
 
 <div class="step-card"><div class="step-row"><span class="step-num">4</span><span>Click <strong>"Add"</strong> to save the cost configuration.</span></div></div>
 
-<div class="tip-box"><i class="fas fa-lightbulb"></i><span>The cost will remain in <strong>Pending</strong> status until approved by the <span class="role-tag">State FC&A Head</span>.</span></div>`,
+<div class="tip-box"><i class="fas fa-lightbulb"></i><span>The cost will remain in <strong>Pending</strong> status until approved by the <span class="role-tag">State FC&A Head</span>.</span></div>
+
+<br><strong>Approve Authority Cost</strong><br><span class="role-tag">Role: State FC&A Head</span>
+
+<div class="step-card"><div class="step-row"><span class="step-num">5</span><span>The <span class="role-tag">State FC&A Head</span> reviews the ROW cost configurations submitted by State FC&A Lead.</span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">6</span><span>Review the rate details — Methodology, Construction Type, Ownership, Fixed Charges, Recurring Charges, Variance percentages, etc.</span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">7</span><span>Click <strong>"Approve"</strong> to finalize the rates. The Approved Status changes from Pending to Approved.</span></div></div>`,
                 sub_options: [
-                    { label: "Approve Authority Cost", action: "rate_approve" },
-                    { label: "Create ROW Authority", action: "authority_create" },
-                    { label: "Back to main menu", action: "home" }
-                ]
-            },
-            rate_approve: {
-                response: `Here's the <strong>Authority Cost Approval</strong> process:<br><span class="role-tag">Role: State FC&A Head</span> &nbsp; <span class="role-tag">System: K2 (Web)</span>
-
-<div class="step-card"><div class="step-row"><span class="step-num">1</span><span>The <span class="role-tag">State FC&A Head</span> reviews the ROW cost configurations submitted by State FC&A Lead.</span></div></div>
-
-<div class="step-card"><div class="step-row"><span class="step-num">2</span><span>Review the rate details — Methodology, Construction Type, Ownership, Fixed Charges, Recurring Charges, Variance percentages, etc.</span></div></div>
-
-<div class="step-card"><div class="step-row"><span class="step-num">3</span><span>Click <strong>"Approve"</strong> to finalize the rates. The Approved Status changes from Pending to Approved.</span></div></div>`,
-                sub_options: [
-                    { label: "Manage Authority Cost", action: "rate_update" },
+                    { label: "Back to Authority Menu", action: "authority_rate" },
                     { label: "Back to main menu", action: "home" }
                 ]
             },
@@ -395,9 +388,6 @@
                 sub_options: [
                     { label: "Create ROW Application", action: "app_create" },
                     { label: "Update Authority / Span Split", action: "app_span_split" },
-                    { label: "Merge Applications", action: "app_merge" },
-                    { label: "Application Acknowledgement", action: "app_ack" },
-                    { label: "Joint Survey Details", action: "app_survey" },
                     { label: "Application Processing Fee", action: "app_fee" }
                 ]
             },
@@ -416,11 +406,46 @@
 
 <div class="step-card"><div class="step-row"><span class="step-num">6</span><span>A success message appears with the <strong>Application ID</strong>. Click OK.</span></div></div>
 
-<div class="tip-box"><i class="fas fa-lightbulb"></i><span>You can <strong>split spans</strong>, <strong>update authority</strong>, or <strong>merge applications</strong> before generating the final application.</span></div>`,
+<div class="tip-box"><i class="fas fa-lightbulb"></i><span>You can <strong>split spans</strong>, <strong>update authority</strong>, or <strong>merge applications</strong> before generating the final application.</span></div>
+
+<br><strong>Merge Applications</strong><br><span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2 (Web)</span>
+
+<div class="step-card"><div class="step-row"><span class="step-num">7</span><span>On the K2 Home page, go to PUBLIC ROW section and click <strong>"Manage Application OneFiber"</strong>.</span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">8</span><span>Select the <strong>multiple applications</strong> you want to merge.</span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">9</span><span>Click the <strong>Merge</strong> option to combine them into a single application and generate the final application.</span></div></div>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><span>Merging is useful when multiple span segments under the same authority need to be submitted as a single application.</span></div>
+
+<br><strong>Application Acknowledgement</strong><br><span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2, GIS (Web)</span>
+
+<div class="step-card"><div class="step-row"><span class="step-num">10</span><span>After application creation, a <strong>"Submit App Acknowledgement Details"</strong> task is automatically assigned in your Task List.</span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">11</span><span>Open the task and review the application details.</span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">12</span><span>Fill in the required acknowledgement details for application submission and <strong>submit</strong>.</span></div></div>
+
+<br><strong>Joint Survey Details</strong><br><span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2, GIS (Web)</span>
+
+<div class="step-card"><div class="step-row"><span class="step-num">13</span><span>A <strong>"Capture Joint Survey Details"</strong> task appears in your Task List after application acknowledgement.</span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">14</span><span>Open the task — the Joint Survey Findings form shows pre-filled details. Fill in:<ul class="field-list">
+<li>App. Ref. No. (pre-filled)</li>
+<li>Authority Name (pre-filled)</li>
+<li>App. Length in Mtrs (pre-filled)</li>
+<li>App. Crossing Nos. (pre-filled)</li>
+<li class="mandatory">Date of Joint Survey</li>
+<li class="mandatory">Survey Finding Document (PDF upload)</li>
+<li>Remarks</li>
+</ul></span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">15</span><span>Click <strong>"Submit"</strong> — <em>"Joint Survey Findings Submitted"</em> success message appears.</span></div></div>
+
+<div class="info-box">If application processing fee is not required, the flow ends here after Joint Survey findings are updated in K2.</div>`,
                 sub_options: [
                     { label: "Update Authority / Span Split", action: "app_span_split" },
-                    { label: "Merge Applications", action: "app_merge" },
-                    { label: "Application Acknowledgement", action: "app_ack" },
+                    { label: "Application Processing Fee", action: "app_fee" },
                     { label: "Back to main menu", action: "home" }
                 ]
             },
@@ -523,7 +548,7 @@
 
 <div class="step-card"><div class="step-row"><span class="step-num">1</span><span>Navigate to <strong>PUBLIC ROW → Manage Demand Note</strong> on the K2 screen.</span></div></div>
 
-<div class="step-card"><div class="step-row"><span class="step-num">2</span><span>Click the <strong>"CREATE DEMAND NOTE - NEW"</strong> tab (for New or Supplementary DN).</span></div></div>
+<div class="step-card"><div class="step-row"><span class="step-num">2</span><span>To create a Demand Note, select <strong>"CREATE DEMAND NOTE – NEW"</strong> for a new Demand Note or <strong>"CREATE DEMAND NOTE – SUPPLEMENTARY"</strong> for a supplementary Demand Note.</span></div></div>
 
 <div class="step-card"><div class="step-row"><span class="step-num">3</span><span><strong>Tab 1 — SELECT APPLICATION:</strong><ul class="field-list">
 <li class="mandatory">Network Type</li>
@@ -590,64 +615,33 @@
 
             // ========== DN APPROVAL & PAYMENT ==========
             dn_approval: {
-                welcome: `I can help you with <strong>DN Approval & Payment</strong>. What would you like to know?`,
-                sub_options: [
-                    { label: "Approval Flow (Green/Orange/Red)", action: "dn_approval_flow" },
-                    { label: "Executor Tasks (Post-Approval)", action: "dn_executor" },
-                    { label: "Back to main menu", action: "home" }
-                ]
-            },
-            dn_approval_flow: {
-                response: `The <strong>DN Approval</strong> chain depends on the channel classification from the DN Checklist:
+                welcome: `I can help you with <strong>DN Approval & Payment</strong>. Below is the complete flow for the <span class="role-tag channel-green">Green Channel</span>, followed by a note on Orange & Red channels.`,
+                directResponse: true,
+                response: `Here is the complete <strong>DN Approval & Payment</strong> flow for <span class="role-tag channel-green">Green Channel</span>:<br><span class="role-tag">System: K2 (Web)</span>
 
-<div class="step-card">
-<span class="role-tag channel-green">GREEN CHANNEL</span><br><br>
-<strong>L1:</strong> <span class="role-tag">State ROW Lead</span><br>
-<strong>L2:</strong> <span class="role-tag">SCO</span><br>
-<strong>L3:</strong> <span class="role-tag">State FC&A Head</span><br>
-↓ <strong>Executor:</strong> <span class="role-tag">State FC&A Lead</span><br>
-↓ <strong>Creator:</strong> <span class="role-tag">ROW Executive</span>
-</div>
+<div class="step-card"><div class="step-row"><span class="step-num">1</span><span><strong>Demand Note Approval – Green Channel – L1</strong><br>
+<span class="role-tag">Role: State ROW Lead</span><br>
+A <em>"DN Approval - Green Channel - Level 1"</em> task appears in the Task List. Open the DN Lifecycle page → <strong>DN APPROVAL</strong> tab. Review the Demand Note details, add Comments, set Status to <strong>Approved</strong>, and click <strong>"Submit"</strong>.</span></div></div>
 
-<div class="step-card">
-<span class="role-tag channel-orange">ORANGE CHANNEL</span><br><br>
-<strong>L1:</strong> <span class="role-tag">State ROW Lead</span><br>
-<strong>L2:</strong> <span class="role-tag">SCO</span><br>
-<strong>L3:</strong> <span class="role-tag">Mentor/Sponsor</span><br>
-<strong>L4:</strong> <span class="role-tag">State FC&A Head</span><br>
-↓ <strong>Executor:</strong> <span class="role-tag">State FC&A Lead</span><br>
-↓ <strong>Creator:</strong> <span class="role-tag">ROW Executive</span>
-</div>
+<div class="step-card"><div class="step-row"><span class="step-num">2</span><span><strong>Demand Note Approval – Green Channel – L2</strong><br>
+<span class="role-tag">Role: SCO</span><br>
+A <em>"DN Approval - Green Channel - Level 2"</em> task appears in the Task List. Open DN Lifecycle → <strong>DN APPROVAL</strong> tab. Review the Approval History (L1 approved), add Comments, set Status to <strong>Approved</strong>, and click <strong>"Submit"</strong>.</span></div></div>
 
-<div class="step-card">
-<span class="role-tag channel-red">RED CHANNEL</span><br><br>
-<strong>L1:</strong> <span class="role-tag">State ROW Lead</span><br>
-<strong>L2:</strong> <span class="role-tag">State Construction Head</span><br>
-<strong>L3:</strong> <span class="role-tag">SCO</span><br>
-<strong>L4:</strong> <span class="role-tag">Mentor/Sponsor</span><br>
-<strong>L5:</strong> <span class="role-tag">State FC&A Head</span><br>
-↓ <strong>Executor:</strong> <span class="role-tag">State FC&A Lead</span>
-</div>
+<div class="step-card"><div class="step-row"><span class="step-num">3</span><span><strong>Demand Note Approval – Green Channel – L3</strong><br>
+<span class="role-tag">Role: State FC&A Head</span><br>
+A <em>"DN Approval - Green Channel - Level 3"</em> task appears in the Task List. Open DN Lifecycle → <strong>DN APPROVAL</strong> tab. Review Approval History (L1 & L2 approved), add Comments, set Status to <strong>Approved</strong>, and click <strong>"Submit"</strong>.</span></div></div>
 
-<div class="tip-box"><i class="fas fa-lightbulb"></i><span>Each approver receives a task in their Task List. Once all approvals are complete, the <span class="role-tag">Executor (State FC&A Lead)</span> performs the remaining tasks — Payment Doc Update, DN Payment, ROW Permission, NOC Capture, and BG/SD Collection.</span></div>`,
-                sub_options: [
-                    { label: "Executor Tasks (Post-Approval)", action: "dn_executor" },
-                    { label: "Back to main menu", action: "home" }
-                ]
-            },
-            dn_executor: {
-                response: `Once all channel approvals are completed, the following tasks are performed sequentially:
+<div class="step-card"><div class="step-row"><span class="step-num">4</span><span><strong>Demand Note Executor</strong><br>
+<span class="role-tag">Role: State FC&A Lead</span><br>
+A <em>"DN Approval - Green Channel - Executor"</em> task appears. Open DN Lifecycle → <strong>DN APPROVAL</strong> tab. Review Approval History (all 3 levels approved). Complete the <strong>Payment Process</strong> section — fill in Vendor Code, Contract Type, YEXP To Be Proceed, Payment Due Date, and verify Fee Details. Click <strong>"Save"</strong> to trigger SAP Proposal creation.</span></div></div>
 
-<div class="step-card">
-<strong>1. Payment Doc Status Update</strong><br>
-<span class="role-tag">Role: NHQ ROW SPOC / ROW Executive</span> &nbsp; <span class="role-tag">System: K2 (Web)</span><br><br>
-A <em>"Demand Note Payment Docs Status Updation"</em> task appears in the Task List. Update the payment document status and submit.
-</div>
+<div class="step-card"><div class="step-row"><span class="step-num">5</span><span><strong>Payment Doc Status Update</strong><br>
+<span class="role-tag">Role: NHQ ROW SPOC / ROW Executive</span><br>
+A <em>"Demand Note Payment Docs Status Updation"</em> task appears. Open DN Lifecycle page, review R4G State, DN Number, Proposal Number, DMS Number, and Payment Doc Status. Click <strong>"Get Payment Doc Status"</strong> to fetch latest status from SAP. Select DN Action and click <strong>"Submit"</strong>.</span></div></div>
 
-<div class="step-card">
-<strong>2. DN Payment</strong><br>
-<span class="role-tag">Role: State ROW Lead</span> &nbsp; <span class="role-tag">System: K2, SAP (Web)</span><br><br>
-Open the DN Lifecycle page → <strong>DN PAYMENT</strong> tab. Fill in:<ul class="field-list">
+<div class="step-card"><div class="step-row"><span class="step-num">6</span><span><strong>DN Payment</strong><br>
+<span class="role-tag">Role: State ROW Lead</span> &nbsp; <span class="role-tag">System: K2, SAP (Web)</span><br>
+A <em>"DN Payment OneFiber"</em> task appears. Open DN Lifecycle → <strong>DN PAYMENT</strong> tab. Fill in:<ul class="field-list">
 <li class="mandatory">Mode of Payment (e.g., DD, BG)</li>
 <li class="mandatory">Type of Charge (Non Refundable / Refundable)</li>
 <li class="mandatory">In Favour Of</li>
@@ -664,12 +658,10 @@ Open the DN Lifecycle page → <strong>DN PAYMENT</strong> tab. Fill in:<ul clas
 <li class="mandatory">Instrument No.</li>
 <li>Submitted Date, Ack. Date</li>
 <li class="mandatory">Scan Copy</li>
-</ul>Add Comments and click <strong>"Submit"</strong>.
-</div>
+</ul>Add Comments and click <strong>"Submit"</strong>.</span></div></div>
 
-<div class="step-card">
-<strong>3. ROW Permission Upload</strong><br>
-<span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2, GIS, REIMS (Web)</span><br><br>
+<div class="step-card"><div class="step-row"><span class="step-num">7</span><span><strong>ROW Permission Upload</strong><br>
+<span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2, GIS, REIMS (Web)</span><br>
 On the DN Lifecycle page → <strong>ROW PERMISSION</strong> tab. Fill in:<ul class="field-list">
 <li class="mandatory">Row Permission Date</li>
 <li class="mandatory">Authorised Signatory</li>
@@ -678,36 +670,184 @@ On the DN Lifecycle page → <strong>ROW PERMISSION</strong> tab. Fill in:<ul cl
 <li class="mandatory">Row Permission Upload (PDF)</li>
 <li class="mandatory">Row Permission Type (e.g., Final)</li>
 <li class="mandatory">Row Permission Ref No.</li>
-</ul>Click <strong>"Submit"</strong>.
-</div>
+</ul>Click <strong>"Submit"</strong>.</span></div></div>
 
-<div class="step-card">
-<strong>4. NOC Capture</strong><br>
-<span class="role-tag">Role: State ROW Lead</span> &nbsp; <span class="role-tag">System: K2 (Web)</span><br><br>
-On the DN Lifecycle page → <strong>NOC CAPTURE</strong> tab. Fill in:<ul class="field-list">
+<div class="step-card"><div class="step-row"><span class="step-num">8</span><span><strong>NOC Capture</strong><br>
+<span class="role-tag">Role: State ROW Lead</span> &nbsp; <span class="role-tag">System: K2 (Web)</span><br>
+A <em>"NOC Capture OneFiber"</em> task appears. Open DN Lifecycle → <strong>NOC CAPTURE</strong> tab. Fill in:<ul class="field-list">
 <li class="mandatory">NOC Received Date</li>
 <li class="mandatory">Authority NOC Scanned Copy (PDF upload)</li>
 <li class="mandatory">Signatory Authority</li>
 <li class="mandatory">NOC Reference No</li>
 <li>Comments</li>
-</ul>Click <strong>"Submit"</strong> (or <strong>"Not Applicable"</strong> if NOC is not required).
-</div>
+</ul>Click <strong>"Submit"</strong> (or <strong>"Not Applicable"</strong> if NOC is not required).</span></div></div>
 
-<div class="step-card">
-<strong>5. BG/SD Return & Acknowledgement</strong><br>
-<span class="role-tag">BG/SD Return: State ROW Lead</span> &nbsp; <span class="role-tag">BG/SD ACK: State FC&A</span><br><br>
-On the DN Lifecycle page → <strong>BG/SD RETURN</strong> tab. Fill in:<ul class="field-list">
+<div class="step-card"><div class="step-row"><span class="step-num">9</span><span><strong>BG/SD Return</strong><br>
+<span class="role-tag">Role: State ROW Lead</span><br>
+A <em>"Refundable Collection OneFiber"</em> task appears. Open DN Lifecycle → <strong>BG/SD RETURN</strong> tab. Fill in:<ul class="field-list">
 <li>Instrument No. (auto-filled)</li>
 <li class="mandatory">Instrument Received Date</li>
 <li>In Favour Of (auto-filled)</li>
 <li>Refund Amount (auto-filled)</li>
 <li class="mandatory">Received Instrument Scan Copy (upload)</li>
 <li>Comments</li>
-</ul>Click <strong>"Save"</strong> then <strong>"Submit"</strong>.<br><br>
-The <span class="role-tag">State FC&A</span> then acknowledges the BG/SD collection on the <strong>BG/SD ACK</strong> tab.
+</ul>Click <strong>"Save"</strong> then <strong>"Submit"</strong>.</span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">10</span><span><strong>BG/SD Acknowledgement</strong><br>
+<span class="role-tag">Role: State FC&A</span><br>
+A <em>"Refundable Collection Ack OneFiber"</em> task appears. Open DN Lifecycle → <strong>BG/SD ACK</strong> tab. The <span class="role-tag">State FC&A</span> acknowledges the BG/SD collection and completes the process.</span></div></div>
+
+<div class="info-box"><strong>Orange & Red Channels:</strong> The post-approval steps (Payment Doc Update → DN Payment → ROW Permission → NOC Capture → BG/SD Return → BG/SD ACK) remain the same across all channels. Only the approval levels differ:<br><br>
+<span class="role-tag channel-orange">ORANGE CHANNEL (4 Levels)</span><br>
+<strong>L1:</strong> State ROW Lead → <strong>L2:</strong> SCO → <strong>L3:</strong> Mentor/Sponsor → <strong>L4:</strong> State FC&A Head → Executor: State FC&A Lead → Creator: ROW Executive<br><br>
+<span class="role-tag channel-red">RED CHANNEL (5 Levels)</span><br>
+<strong>L1:</strong> State ROW Lead → <strong>L2:</strong> State Construction Head → <strong>L3:</strong> SCO → <strong>L4:</strong> Mentor/Sponsor → <strong>L5:</strong> State FC&A Head → Executor: State FC&A Lead</div>`,
+                sub_options: [
+                    { label: "Demand Note Creation", action: "dn_creation" },
+                    { label: "Back to main menu", action: "home" }
+                ]
+            },
+
+            // ========== GET ACCESS ==========
+            get_access: {
+                directResponse: true,
+                response: `Here's how to <strong>get access</strong> to the ROW & Demand Note system:<br><span class="role-tag">For New Users</span>
+
+<div class="step-card"><div class="step-row"><span class="step-num">1</span><span>Login to the URL: <strong><a href="https://osp.jio.com/oneinfra/" target="_blank">https://osp.jio.com/oneinfra/</a></strong></span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">2</span><span>Opt for the <strong>Role</strong> you need access to.</span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">3</span><span>Your request will go to <strong>NHQ Intercity / Intracity Super Admin</strong> for approval.</span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">4</span><span>After approval, you will be able to <strong>login to the system and perform tasks</strong>.</span></div></div>`,
+                sub_options: [
+                    { label: "Back to main menu", action: "home" }
+                ]
+            },
+
+            // ========== ROLES & TASKS AND GLOSSARY ==========
+            roles_glossary: {
+                welcome: `What would you like to view?`,
+                sub_options: [
+                    { label: "Roles & Tasks", action: "roles_tasks" },
+                    { label: "Abbreviations / Glossary", action: "glossary" }
+                ]
+            },
+            roles_tasks: {
+                directResponse: true,
+                response: `<strong>Roles & Their Tasks</strong> in the ROW & Demand Note system:
+
+<div class="step-card">
+<strong>ROW Executive</strong><br>
+• Create ROW Authority<br>
+• Manage Authority Vendor Contract Type Mapping<br>
+• Create ROW Application<br>
+• Application Acknowledgement<br>
+• Capture Joint Survey Details<br>
+• Capture Application Processing Fee<br>
+• Upload Demand Note<br>
+• ROW Permission Upload<br>
+• Demand Note Creator
+</div>
+
+<div class="step-card">
+<strong>State FC&A Lead</strong><br>
+• Manage Authority Cost<br>
+• Demand Note Executor<br>
+• Application Processing Fee – L2 Approval
+</div>
+
+<div class="step-card">
+<strong>State FC&A Head</strong><br>
+• Approve Authority Cost<br>
+• DN Approval – Green Channel L3<br>
+• DN Approval – Orange Channel L4<br>
+• DN Approval – Red Channel L5
+</div>
+
+<div class="step-card">
+<strong>State ROW Lead</strong><br>
+• DN Approval – Green Channel L1<br>
+• DN Approval – Orange Channel L1<br>
+• DN Approval – Red Channel L1<br>
+• DN Payment<br>
+• NOC Capture<br>
+• BG/SD Collection & Return
+</div>
+
+<div class="step-card">
+<strong>SCO (State Construction Office)</strong><br>
+• DN Approval – Green Channel L2<br>
+• DN Approval – Orange Channel L2<br>
+• DN Approval – Red Channel L3
+</div>
+
+<div class="step-card">
+<strong>State SCO Lead</strong><br>
+• Application Processing Fee – L1 Approval
+</div>
+
+<div class="step-card">
+<strong>State Construction Head</strong><br>
+• DN Approval – Red Channel L2
+</div>
+
+<div class="step-card">
+<strong>Mentor / Sponsor</strong><br>
+• DN Approval – Orange Channel L3<br>
+• DN Approval – Red Channel L4
+</div>
+
+<div class="step-card">
+<strong>NHQ ROW SPOC</strong><br>
+• Payment Doc Status Updation
+</div>
+
+<div class="step-card">
+<strong>State FC&A</strong><br>
+• BG/SD Acknowledgement
 </div>`,
                 sub_options: [
-                    { label: "Approval Flow (Green/Orange/Red)", action: "dn_approval_flow" },
+                    { label: "Abbreviations / Glossary", action: "glossary" },
+                    { label: "Back to main menu", action: "home" }
+                ]
+            },
+            glossary: {
+                directResponse: true,
+                response: `<strong>Abbreviations / Glossary</strong>:
+
+<div class="step-card">
+<strong>ROW</strong> – Right of Way<br>
+<strong>K2</strong> – Workflow Management Platform<br>
+<strong>GIS</strong> – Geographic Information System<br>
+<strong>FTTX</strong> – Fiber to the X<br>
+<strong>SPAN</strong> – Fiber cable segment between two points<br>
+<strong>RWS</strong> – ROW Span Identifier<br>
+<strong>NHAI</strong> – National Highways Authority of India<br>
+<strong>PWD</strong> – Public Works Department<br>
+<strong>DIT</strong> – Department of Information Technology<br>
+<strong>SCO</strong> – State Circle Office<br>
+<strong>FC&A</strong> – Finance, Costing & Accounts<br>
+<strong>MP</strong> – Maintenance Point<br>
+<strong>HDD</strong> – Horizontal Directional Drilling<br>
+<strong>UG</strong> – Underground (Construction Method)<br>
+<strong>NLD</strong> – National Long Distance<br>
+<strong>SHQ</strong> – State Headquarters<br>
+<strong>NHQ</strong> – National Headquarters<br>
+<strong>DN</strong> – Demand Note<br>
+<strong>BG</strong> – Bank Guarantee<br>
+<strong>SD</strong> – Security Deposit<br>
+<strong>NOC</strong> – No Objection Certificate<br>
+<strong>SAP</strong> – Systems, Applications & Products<br>
+<strong>REIMS</strong> – Real Estate Information Management System<br>
+<strong>GL</strong> – General Ledger<br>
+<strong>DMS</strong> – Document Management System<br>
+<strong>MT</strong> – Micro Trenching<br>
+<strong>OT</strong> – Open Trenching<br>
+<strong>DD</strong> – Demand Draft
+</div>`,
+                sub_options: [
+                    { label: "Roles & Tasks", action: "roles_tasks" },
                     { label: "Back to main menu", action: "home" }
                 ]
             }
@@ -715,10 +855,12 @@ The <span class="role-tag">State FC&A</span> then acknowledges the BG/SD collect
 
         // ==================== MAIN MENU ====================
         const mainMenuOptions = [
+            { label: '<i class="fas fa-key"></i> Get Access', action: 'get_access' },
             { label: '<i class="fas fa-building"></i> ROW Authority Creation & Rate Update', action: 'authority_rate' },
             { label: '<i class="fas fa-file-lines"></i> ROW Application & Processing', action: 'application' },
             { label: '<i class="fas fa-file-invoice"></i> Demand Note Creation', action: 'dn_creation' },
-            { label: '<i class="fas fa-check-double"></i> DN Approval & Payment', action: 'dn_approval' }
+            { label: '<i class="fas fa-check-double"></i> DN Approval & Payment', action: 'dn_approval' },
+            { label: '<i class="fas fa-book"></i> Roles & Glossary', action: 'roles_glossary' }
         ];
 
         // ==================== CHAT FUNCTIONS ====================
@@ -868,7 +1010,13 @@ The <span class="role-tag">State FC&A</span> then acknowledges the BG/SD collect
             userInput.value = '';
             const lower = text.toLowerCase();
 
-            if (lower.includes('authority') && (lower.includes('creat') || lower.includes('add') || lower.includes('manage'))) {
+            if (lower.includes('access') || lower.includes('login') || lower.includes('register') || lower.includes('sign up')) {
+                handleAction('get_access', null);
+            } else if (lower.includes('role') && lower.includes('task')) {
+                handleAction('roles_tasks', null);
+            } else if (lower.includes('glossary') || lower.includes('abbreviat') || lower.includes('full form')) {
+                handleAction('glossary', null);
+            } else if (lower.includes('authority') && (lower.includes('creat') || lower.includes('add') || lower.includes('manage'))) {
                 handleAction('authority_rate', null);
             } else if (lower.includes('rate') || lower.includes('cost') || lower.includes('methodology')) {
                 handleAction('rate_update', null);
@@ -889,15 +1037,15 @@ The <span class="role-tag">State FC&A</span> then acknowledges the BG/SD collect
             } else if (lower.includes('demand note') && (lower.includes('creat') || lower.includes('upload') || lower.includes('new') || lower.includes('supplementary'))) {
                 handleAction('dn_creation', null);
             } else if (lower.includes('checklist') || lower.includes('channel') || lower.includes('green') || lower.includes('orange') || lower.includes('red channel')) {
-                handleAction('dn_approval_flow', null);
+                handleAction('dn_approval', null);
             } else if ((lower.includes('approval') || lower.includes('approve')) && (lower.includes('dn') || lower.includes('demand'))) {
                 handleAction('dn_approval', null);
             } else if (lower.includes('payment') && (lower.includes('dn') || lower.includes('demand'))) {
-                handleAction('dn_executor', null);
+                handleAction('dn_approval', null);
             } else if (lower.includes('permission') || lower.includes('noc') || lower.includes('bg') || lower.includes('refund')) {
-                handleAction('dn_executor', null);
+                handleAction('dn_approval', null);
             } else if (lower.includes('executor')) {
-                handleAction('dn_executor', null);
+                handleAction('dn_approval', null);
             } else if (lower.includes('row application') || lower.includes('row app')) {
                 handleAction('application', null);
             } else if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey') || lower.includes('help') || lower.includes('menu') || lower.includes('start')) {
