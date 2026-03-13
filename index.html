@@ -280,7 +280,7 @@
         </div>
         <div class="chat-messages" id="chatMessages"></div>
         <div class="chat-input-area">
-            <input type="text" id="userInput" placeholder="Type your question..." autocomplete="off">
+            <input type="text" id="userInput" placeholder="Type a question..." autocomplete="off">
             <button class="send-btn" onclick="handleUserInput()"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
@@ -297,7 +297,7 @@
 
             // ========== ROW AUTHORITY CREATION & RATE UPDATE ==========
             authority_rate: {
-                welcome: `I can help you with <strong>ROW Authority Creation & Rate Maintenance</strong>. What would you like to do?`,
+                welcome: `Here is information on <strong>ROW Authority Creation & Rate Maintenance</strong>. Please select an option:`,
                 sub_options: [
                     { label: "Create ROW Authority", action: "authority_create" },
                     { label: "Vendor Contract Mapping", action: "authority_vendor" },
@@ -321,13 +321,13 @@
 
 <div class="step-card"><div class="step-row"><span class="step-num">4</span><span><strong>For Existing Authority:</strong> Under the <em>Registered Authority</em> tab, search and select the authority. Fill in Authority Category, Name, Address, add JIO State & MP Mapping, and click <strong>"Save Authority"</strong>.</span></div></div>
 
-<div class="step-card"><div class="step-row"><span class="step-num">5</span><span>Confirm the mapping in the popup dialog. You'll see <em>"Authority Saved Successfully"</em>.</span></div></div>
+<div class="step-card"><div class="step-row"><span class="step-num">5</span><span>Confirm the mapping in the popup dialog. The system displays <em>"Authority Saved Successfully"</em>.</span></div></div>
 
 <div class="tip-box"><i class="fas fa-lightbulb"></i><span>After saving, the authority must be mapped to GL Code & Contract Type. See <strong>Vendor Contract Mapping</strong>.</span></div>`,
                 sub_options: [
                     { label: "Vendor Contract Mapping", action: "authority_vendor" },
                     { label: "Manage Authority Cost", action: "rate_update" },
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             },
             authority_vendor: {
@@ -343,7 +343,7 @@
                 sub_options: [
                     { label: "Create ROW Authority", action: "authority_create" },
                     { label: "Manage Authority Cost", action: "rate_update" },
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             },
             rate_update: {
@@ -378,16 +378,17 @@
 <div class="step-card"><div class="step-row"><span class="step-num">7</span><span>Click <strong>"Approve"</strong> to finalize the rates. The Approved Status changes from Pending to Approved.</span></div></div>`,
                 sub_options: [
                     { label: "Back to Authority Menu", action: "authority_rate" },
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             },
 
             // ========== ROW APPLICATION CREATION & PROCESSING ==========
             application: {
-                welcome: `I can help you with <strong>ROW Application Creation & Processing</strong>. What would you like to do?`,
+                welcome: `Here is information on <strong>ROW Application Creation & Processing</strong>. Please select an option:`,
                 sub_options: [
                     { label: "Create ROW Application", action: "app_create" },
                     { label: "Update Authority / Span Split", action: "app_span_split" },
+                    { label: "Map SPAN to Multiple Authorities", action: "app_span_mapping" },
                     { label: "Application Processing Fee", action: "app_fee" }
                 ]
             },
@@ -406,13 +407,13 @@
 
 <div class="step-card"><div class="step-row"><span class="step-num">6</span><span>A success message appears with the <strong>Application ID</strong>. Click OK.</span></div></div>
 
-<div class="tip-box"><i class="fas fa-lightbulb"></i><span>You can <strong>split spans</strong>, <strong>update authority</strong>, or <strong>merge applications</strong> before generating the final application.</span></div>
+<div class="tip-box"><i class="fas fa-lightbulb"></i><span>Spans can be <strong>split</strong>, <strong>authority updated</strong>, or <strong>applications merged</strong> before generating the final application.</span></div>
 
 <br><strong>Merge Applications</strong><br><span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2 (Web)</span>
 
 <div class="step-card"><div class="step-row"><span class="step-num">7</span><span>On the K2 Home page, go to PUBLIC ROW section and click <strong>"Manage Application OneFiber"</strong>.</span></div></div>
 
-<div class="step-card"><div class="step-row"><span class="step-num">8</span><span>Select the <strong>multiple applications</strong> you want to merge.</span></div></div>
+<div class="step-card"><div class="step-row"><span class="step-num">8</span><span>Select the <strong>multiple applications</strong> to be merged.</span></div></div>
 
 <div class="step-card"><div class="step-row"><span class="step-num">9</span><span>Click the <strong>Merge</strong> option to combine them into a single application and generate the final application.</span></div></div>
 
@@ -420,7 +421,7 @@
 
 <br><strong>Application Acknowledgement</strong><br><span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2, GIS (Web)</span>
 
-<div class="step-card"><div class="step-row"><span class="step-num">10</span><span>After application creation, a <strong>"Submit App Acknowledgement Details"</strong> task is automatically assigned in your Task List.</span></div></div>
+<div class="step-card"><div class="step-row"><span class="step-num">10</span><span>After application creation, a <strong>"Submit App Acknowledgement Details"</strong> task is automatically assigned in the Task List.</span></div></div>
 
 <div class="step-card"><div class="step-row"><span class="step-num">11</span><span>Open the task and review the application details.</span></div></div>
 
@@ -428,7 +429,7 @@
 
 <br><strong>Joint Survey Details</strong><br><span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2, GIS (Web)</span>
 
-<div class="step-card"><div class="step-row"><span class="step-num">13</span><span>A <strong>"Capture Joint Survey Details"</strong> task appears in your Task List after application acknowledgement.</span></div></div>
+<div class="step-card"><div class="step-row"><span class="step-num">13</span><span>A <strong>"Capture Joint Survey Details"</strong> task appears in the Task List after application acknowledgement.</span></div></div>
 
 <div class="step-card"><div class="step-row"><span class="step-num">14</span><span>Open the task — the Joint Survey Findings form shows pre-filled details. Fill in:<ul class="field-list">
 <li>App. Ref. No. (pre-filled)</li>
@@ -446,7 +447,7 @@
                 sub_options: [
                     { label: "Update Authority / Span Split", action: "app_span_split" },
                     { label: "Application Processing Fee", action: "app_fee" },
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             },
             app_span_split: {
@@ -464,7 +465,29 @@
                 sub_options: [
                     { label: "Create ROW Application", action: "app_create" },
                     { label: "Merge Applications", action: "app_merge" },
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
+                ]
+            },
+            app_span_mapping: {
+                response: `Here's how to <strong>map SPAN segments to multiple authorities</strong>:<br><span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2, GIS (Web)</span>
+
+<div class="step-card"><div class="step-row"><span class="step-num">1</span><span>Navigate to the <strong>Public ROW Module</strong> → open the <strong>Manage Authority</strong> page → click <strong>"Update ROW Authority (GIS)"</strong> → search for the required <strong>Link / SPAN</strong> details.</span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">2</span><span>On the <strong>GIS Map</strong>, locate and select the SPAN segment where multiple authorities need to be mapped.</span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">3</span><span>After selecting the SPAN segment, update the following details:<ul class="field-list">
+<li class="mandatory">SPAN Segment</li>
+<li class="mandatory">Authority Category</li>
+<li class="mandatory">Authority Name</li>
+</ul></span></div></div>
+
+<div class="step-card"><div class="step-row"><span class="step-num">4</span><span>Save or update the mapping to assign the selected authorities to the SPAN segment.</span></div></div>
+
+<div class="tip-box"><i class="fas fa-lightbulb"></i><span>A ROW Executive can map <strong>multiple authorities</strong> to a single SPAN segment using this process.</span></div>`,
+                sub_options: [
+                    { label: "Create ROW Application", action: "app_create" },
+                    { label: "Update Authority / Span Split", action: "app_span_split" },
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             },
             app_merge: {
@@ -472,7 +495,7 @@
 
 <div class="step-card"><div class="step-row"><span class="step-num">1</span><span>On the K2 Home page, go to PUBLIC ROW section and click <strong>"Manage Application OneFiber"</strong>.</span></div></div>
 
-<div class="step-card"><div class="step-row"><span class="step-num">2</span><span>Select the <strong>multiple applications</strong> you want to merge.</span></div></div>
+<div class="step-card"><div class="step-row"><span class="step-num">2</span><span>Select the <strong>multiple applications</strong> to be merged.</span></div></div>
 
 <div class="step-card"><div class="step-row"><span class="step-num">3</span><span>Click the <strong>Merge</strong> option to combine them into a single application and generate the final application.</span></div></div>
 
@@ -480,13 +503,13 @@
                 sub_options: [
                     { label: "Create ROW Application", action: "app_create" },
                     { label: "Application Acknowledgement", action: "app_ack" },
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             },
             app_ack: {
                 response: `Here's how <strong>Application Acknowledgement</strong> works:<br><span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2, GIS (Web)</span>
 
-<div class="step-card"><div class="step-row"><span class="step-num">1</span><span>After application creation, a <strong>"Submit App Acknowledgement Details"</strong> task is automatically assigned in your Task List.</span></div></div>
+<div class="step-card"><div class="step-row"><span class="step-num">1</span><span>After application creation, a <strong>"Submit App Acknowledgement Details"</strong> task is automatically assigned in the Task List.</span></div></div>
 
 <div class="step-card"><div class="step-row"><span class="step-num">2</span><span>Open the task and review the application details.</span></div></div>
 
@@ -494,13 +517,13 @@
                 sub_options: [
                     { label: "Joint Survey Details", action: "app_survey" },
                     { label: "Application Processing Fee", action: "app_fee" },
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             },
             app_survey: {
                 response: `Here's how to <strong>capture Joint Survey Details</strong>:<br><span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2, GIS (Web)</span>
 
-<div class="step-card"><div class="step-row"><span class="step-num">1</span><span>A <strong>"Capture Joint Survey Details"</strong> task appears in your Task List after application acknowledgement.</span></div></div>
+<div class="step-card"><div class="step-row"><span class="step-num">1</span><span>A <strong>"Capture Joint Survey Details"</strong> task appears in the Task List after application acknowledgement.</span></div></div>
 
 <div class="step-card"><div class="step-row"><span class="step-num">2</span><span>Open the task — the Joint Survey Findings form shows pre-filled details. Fill in:<ul class="field-list">
 <li>App. Ref. No. (pre-filled)</li>
@@ -518,7 +541,7 @@
                 sub_options: [
                     { label: "Application Processing Fee", action: "app_fee" },
                     { label: "Application Acknowledgement", action: "app_ack" },
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             },
             app_fee: {
@@ -536,13 +559,13 @@
                 sub_options: [
                     { label: "Joint Survey Details", action: "app_survey" },
                     { label: "Create ROW Application", action: "app_create" },
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             },
 
             // ========== DEMAND NOTE CREATION ==========
             dn_creation: {
-                welcome: `I can help you with <strong>Demand Note Creation</strong>. Here are the steps:`,
+                welcome: `Here is information on <strong>Demand Note Creation</strong>. Below are the steps:`,
                 directResponse: true,
                 response: `Here's the complete <strong>Demand Note Creation</strong> process:<br><span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: Web</span>
 
@@ -609,13 +632,13 @@
 <div class="step-card"><div class="step-row"><span class="step-num">7</span><span><strong>Submit</strong> the Demand Note. It will be routed for approval based on the channel classification.</span></div></div>`,
                 sub_options: [
                     { label: "DN Approval & Payment", action: "dn_approval" },
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             },
 
             // ========== DN APPROVAL & PAYMENT ==========
             dn_approval: {
-                welcome: `I can help you with <strong>DN Approval & Payment</strong>. Below is the complete flow for the <span class="role-tag channel-green">Green Channel</span>, followed by a note on Orange & Red channels.`,
+                welcome: `Here is information on <strong>DN Approval & Payment</strong>. Below is the complete flow for the <span class="role-tag channel-green">Green Channel</span>, followed by a note on Orange & Red channels.`,
                 directResponse: true,
                 response: `Here is the complete <strong>DN Approval & Payment</strong> flow for <span class="role-tag channel-green">Green Channel</span>:<br><span class="role-tag">System: K2 (Web)</span>
 
@@ -631,7 +654,7 @@ A <em>"DN Approval - Green Channel - Level 2"</em> task appears in the Task List
 <span class="role-tag">Role: State FC&A Head</span><br>
 A <em>"DN Approval - Green Channel - Level 3"</em> task appears in the Task List. Open DN Lifecycle → <strong>DN APPROVAL</strong> tab. Review Approval History (L1 & L2 approved), add Comments, set Status to <strong>Approved</strong>, and click <strong>"Submit"</strong>.</span></div></div>
 
-<div class="step-card"><div class="step-row"><span class="step-num">4</span><span><strong>Demand Note Executor</strong><br>
+<div class="step-card"><div class="step-row"><span class="step-num">4</span><span><strong>Demand Note Approval Green Channel Executor</strong><br>
 <span class="role-tag">Role: State FC&A Lead</span><br>
 A <em>"DN Approval - Green Channel - Executor"</em> task appears. Open DN Lifecycle → <strong>DN APPROVAL</strong> tab. Review Approval History (all 3 levels approved). Complete the <strong>Payment Process</strong> section — fill in Vendor Code, Contract Type, YEXP To Be Proceed, Payment Due Date, and verify Fee Details. Click <strong>"Save"</strong> to trigger SAP Proposal creation.</span></div></div>
 
@@ -704,7 +727,7 @@ A <em>"Refundable Collection Ack OneFiber"</em> task appears. Open DN Lifecycle 
 <strong>L1:</strong> State ROW Lead → <strong>L2:</strong> State Construction Head → <strong>L3:</strong> SCO → <strong>L4:</strong> Mentor/Sponsor → <strong>L5:</strong> State FC&A Head → Executor: State FC&A Lead</div>`,
                 sub_options: [
                     { label: "Demand Note Creation", action: "dn_creation" },
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             },
 
@@ -715,19 +738,19 @@ A <em>"Refundable Collection Ack OneFiber"</em> task appears. Open DN Lifecycle 
 
 <div class="step-card"><div class="step-row"><span class="step-num">1</span><span>Login to the URL: <strong><a href="https://osp.jio.com/oneinfra/" target="_blank">https://osp.jio.com/oneinfra/</a></strong></span></div></div>
 
-<div class="step-card"><div class="step-row"><span class="step-num">2</span><span>Opt for the <strong>Role</strong> you need access to.</span></div></div>
+<div class="step-card"><div class="step-row"><span class="step-num">2</span><span>Select the required <strong>Role</strong> for access.</span></div></div>
 
-<div class="step-card"><div class="step-row"><span class="step-num">3</span><span>Your request will go to <strong>NHQ Intercity / Intracity Super Admin</strong> for approval.</span></div></div>
+<div class="step-card"><div class="step-row"><span class="step-num">3</span><span>The request will be sent to <strong>NHQ Intercity / Intracity Super Admin</strong> for approval.</span></div></div>
 
-<div class="step-card"><div class="step-row"><span class="step-num">4</span><span>After approval, you will be able to <strong>login to the system and perform tasks</strong>.</span></div></div>`,
+<div class="step-card"><div class="step-row"><span class="step-num">4</span><span>After approval, <strong>system login and task execution</strong> will be enabled.</span></div></div>`,
                 sub_options: [
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             },
 
             // ========== ROLES & TASKS AND GLOSSARY ==========
             roles_glossary: {
-                welcome: `What would you like to view?`,
+                welcome: `Please select an option:`,
                 sub_options: [
                     { label: "Roles & Tasks", action: "roles_tasks" },
                     { label: "Abbreviations / Glossary", action: "glossary" }
@@ -753,7 +776,7 @@ A <em>"Refundable Collection Ack OneFiber"</em> task appears. Open DN Lifecycle 
 <div class="step-card">
 <strong>State FC&A Lead</strong><br>
 • Manage Authority Cost<br>
-• Demand Note Executor<br>
+• Demand Note Approval Green Channel Executor<br>
 • Application Processing Fee – L2 Approval
 </div>
 
@@ -809,7 +832,7 @@ A <em>"Refundable Collection Ack OneFiber"</em> task appears. Open DN Lifecycle 
 </div>`,
                 sub_options: [
                     { label: "Abbreviations / Glossary", action: "glossary" },
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             },
             glossary: {
@@ -848,7 +871,7 @@ A <em>"Refundable Collection Ack OneFiber"</em> task appears. Open DN Lifecycle 
 </div>`,
                 sub_options: [
                     { label: "Roles & Tasks", action: "roles_tasks" },
-                    { label: "Back to main menu", action: "home" }
+                    { label: "Back to Main Menu", action: "home" }
                 ]
             }
         };
@@ -969,7 +992,7 @@ A <em>"Refundable Collection Ack OneFiber"</em> task appears. Open DN Lifecycle 
         }
 
         function showMainMenu() {
-            addMessage(`How can I help you today? Choose a topic below or type your question.`);
+            addMessage(`Welcome! Please choose a topic below or type a question.`);
             addButtons(mainMenuOptions, true);
         }
 
@@ -1016,14 +1039,24 @@ A <em>"Refundable Collection Ack OneFiber"</em> task appears. Open DN Lifecycle 
                 handleAction('roles_tasks', null);
             } else if (lower.includes('glossary') || lower.includes('abbreviat') || lower.includes('full form')) {
                 handleAction('glossary', null);
-            } else if (lower.includes('authority') && (lower.includes('creat') || lower.includes('add') || lower.includes('manage'))) {
-                handleAction('authority_rate', null);
-            } else if (lower.includes('rate') || lower.includes('cost') || lower.includes('methodology')) {
+            } else if (lower.includes('role')) {
+                handleAction('roles_glossary', null);
+            } else if (lower.includes('authority') && (lower.includes('creat') || lower.includes('add'))) {
+                handleAction('authority_create', null);
+            } else if (lower.includes('authority') && lower.includes('cost')) {
                 handleAction('rate_update', null);
             } else if (lower.includes('vendor') && lower.includes('contract')) {
                 handleAction('authority_vendor', null);
+            } else if (lower.includes('authority') && (lower.includes('manage') || lower.includes('rate') || lower.includes('maintenance'))) {
+                handleAction('authority_rate', null);
+            } else if (lower.includes('authority')) {
+                handleAction('authority_rate', null);
+            } else if (lower.includes('rate') || lower.includes('cost') || lower.includes('methodology')) {
+                handleAction('rate_update', null);
             } else if (lower.includes('application') && (lower.includes('creat') || lower.includes('generat') || lower.includes('draft'))) {
                 handleAction('application', null);
+            } else if (lower.includes('span') && (lower.includes('map') || lower.includes('multiple authorit'))) {
+                handleAction('app_span_mapping', null);
             } else if (lower.includes('span') && (lower.includes('split') || lower.includes('update'))) {
                 handleAction('app_span_split', null);
             } else if (lower.includes('merge')) {
@@ -1042,16 +1075,20 @@ A <em>"Refundable Collection Ack OneFiber"</em> task appears. Open DN Lifecycle 
                 handleAction('dn_approval', null);
             } else if (lower.includes('payment') && (lower.includes('dn') || lower.includes('demand'))) {
                 handleAction('dn_approval', null);
-            } else if (lower.includes('permission') || lower.includes('noc') || lower.includes('bg') || lower.includes('refund')) {
+            } else if (lower.includes('permission') || lower.includes('noc') || lower.includes('refund')) {
                 handleAction('dn_approval', null);
             } else if (lower.includes('executor')) {
                 handleAction('dn_approval', null);
-            } else if (lower.includes('row application') || lower.includes('row app')) {
+            } else if (lower.includes('demand note') || lower.includes('demand') || lower.includes(' dn ') || lower === 'dn') {
+                handleAction('dn_creation', null);
+            } else if (lower.includes('row application') || lower.includes('row app') || lower.includes('application')) {
                 handleAction('application', null);
+            } else if (lower.includes('bg') && (lower.includes('return') || lower.includes('guarantee'))) {
+                handleAction('dn_approval', null);
             } else if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey') || lower.includes('help') || lower.includes('menu') || lower.includes('start')) {
                 showMainMenu();
             } else {
-                addMessage(`I'm not sure about that. Here are the topics I can help with — click one to get started:`);
+                addMessage(`That topic was not found. Here are the available topics — please select one to get started:`);
                 addButtons(mainMenuOptions, true);
             }
         }
