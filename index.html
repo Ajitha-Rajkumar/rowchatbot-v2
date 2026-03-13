@@ -902,12 +902,18 @@ A <em>"Refundable Collection Ack OneFiber"</em> task appears. Open DN Lifecycle 
             scrollToBottom();
         }
 
-        function addMessage(content, isBot = true, withTyping = true) {
+        function addMessage(content, isBot = true, withTyping = true, callback = null) {
             if (withTyping && isBot) {
                 showTypingIndicator();
-                setTimeout(() => { removeTypingIndicator(); appendMessage(content, isBot); }, 500 + Math.random() * 300);
+                const delay = 500 + Math.random() * 300;
+                setTimeout(() => {
+                    removeTypingIndicator();
+                    appendMessage(content, isBot);
+                    if (callback) callback();
+                }, delay);
             } else {
                 appendMessage(content, isBot);
+                if (callback) callback();
             }
         }
 
@@ -980,20 +986,24 @@ A <em>"Refundable Collection Ack OneFiber"</em> task appears. Open DN Lifecycle 
             if (!flow) return;
 
             if (flow.directResponse && flow.response) {
-                addMessage(flow.response);
-                if (flow.sub_options) addButtons(flow.sub_options);
+                addMessage(flow.response, true, true, () => {
+                    if (flow.sub_options) addButtons(flow.sub_options);
+                });
             } else if (flow.welcome) {
-                addMessage(flow.welcome);
-                if (flow.sub_options) addButtons(flow.sub_options);
+                addMessage(flow.welcome, true, true, () => {
+                    if (flow.sub_options) addButtons(flow.sub_options);
+                });
             } else if (flow.response) {
-                addMessage(flow.response);
-                if (flow.sub_options) addButtons(flow.sub_options);
+                addMessage(flow.response, true, true, () => {
+                    if (flow.sub_options) addButtons(flow.sub_options);
+                });
             }
         }
 
         function showMainMenu() {
-            addMessage(`Welcome! Please choose a topic below or type a question.`);
-            addButtons(mainMenuOptions, true);
+            addMessage(`Welcome! Please choose a topic below or type a question.`, true, true, () => {
+                addButtons(mainMenuOptions, true);
+            });
         }
 
         // ==================== HEADER ACTIONS ====================
@@ -1088,8 +1098,9 @@ A <em>"Refundable Collection Ack OneFiber"</em> task appears. Open DN Lifecycle 
             } else if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey') || lower.includes('help') || lower.includes('menu') || lower.includes('start')) {
                 showMainMenu();
             } else {
-                addMessage(`That topic was not found. Here are the available topics — please select one to get started:`);
-                addButtons(mainMenuOptions, true);
+                addMessage(`That topic was not found. Here are the available topics — please select one to get started:`, true, true, () => {
+                    addButtons(mainMenuOptions, true);
+                });
             }
         }
 
