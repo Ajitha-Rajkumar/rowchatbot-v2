@@ -474,7 +474,7 @@
 &nbsp;&nbsp;• Link ID<br>
 &nbsp;&nbsp;• Span ID<br>
 &nbsp;&nbsp;• Feature Type<br>
-Click <strong>"Submit"</strong></span></div></div>
+<strong>Submit</strong></span></div></div>
 
 <div class="step-card"><div class="step-row"><span class="step-num">2</span><span>SPAN segments with Feature ID, Authority Name, and Authority Category will be displayed on the GIS map.</span></div></div>
 
@@ -493,19 +493,22 @@ Click <strong>"Submit"</strong></span></div></div>
             app_span_mapping: {
                 response: `Here's how to <strong>map SPAN segments to multiple authorities</strong>:<br><span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2, GIS (Web)</span>
 
-<div class="step-card"><div class="step-row"><span class="step-num">1</span><span>Navigate to <strong>PUBLIC ROW</strong> → <strong>Manage Authority</strong> → click <strong>"Update ROW Authority (GIS)"</strong> on the K2 screen. Search for the required <strong>Link / SPAN</strong> details.</span></div></div>
+<div class="step-card"><div class="step-row"><span class="step-num">1</span><span>Navigate to <strong>PUBLIC ROW</strong> → <strong>Manage Authority</strong> on the K2 screen → click <strong>"Update Authority in GIS"</strong>. Select the below parameters:<br>
+&nbsp;&nbsp;• Jio State<br>
+&nbsp;&nbsp;• Maintenance Point<br>
+&nbsp;&nbsp;• Network Type<br>
+&nbsp;&nbsp;• Link ID<br>
+&nbsp;&nbsp;• Span ID<br>
+&nbsp;&nbsp;• Feature Type<br>
+<strong>Submit</strong></span></div></div>
 
-<div class="step-card"><div class="step-row"><span class="step-num">2</span><span>On the <strong>GIS Map</strong>, locate and select the SPAN segment where multiple authorities need to be mapped.</span></div></div>
+<div class="step-card"><div class="step-row"><span class="step-num">2</span><span>Go to the GIS map and select the SPAN segment to map multiple authorities. Update the following details:<br>
+&nbsp;&nbsp;• SPAN Segment<br>
+&nbsp;&nbsp;• Authority Category<br>
+&nbsp;&nbsp;• Authority Name<br>
+<strong>Update</strong></span></div></div>
 
-<div class="step-card"><div class="step-row"><span class="step-num">3</span><span>After selecting the SPAN segment, update the following details:<ul class="field-list">
-<li class="mandatory">SPAN Segment</li>
-<li class="mandatory">Authority Category</li>
-<li class="mandatory">Authority Name</li>
-</ul></span></div></div>
-
-<div class="step-card"><div class="step-row"><span class="step-num">4</span><span>Save or update the mapping to assign the selected authorities to the SPAN segment.</span></div></div>
-
-<div class="tip-box"><i class="fas fa-lightbulb"></i><span>A ROW Executive can map <strong>multiple authorities</strong> to a single SPAN segment using this process.</span></div>`,
+<div class="step-card"><div class="step-row"><span class="step-num">3</span><span>New mapped authority will start reflecting as <strong>Secondary Authorities</strong>.</span></div></div>`,
                 sub_options: [
                     { label: "Create ROW Application", action: "app_create" },
                     { label: "Update Authority / Span Split", action: "app_span_split" },
