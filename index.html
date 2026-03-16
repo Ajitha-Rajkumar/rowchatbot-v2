@@ -963,7 +963,7 @@
 <strong>SD</strong> – Security Deposit<br>
 <strong>NOC</strong> – No Objection Certificate<br>
 <strong>SAP</strong> – Systems, Applications & Products<br>
-<strong>REIMS</strong> – Real Estate Information Management System<br>
+<strong>REIMS</strong> – Reliance Enterprise Information management Systems<br>
 <strong>GL</strong> – General Ledger<br>
 <strong>DMS</strong> – Document Management System<br>
 <strong>MT</strong> – Micro Trenching<br>
@@ -1136,6 +1136,37 @@
             }
         }
 
+        // ======= SEQUENTIAL PROCESS FLOW (for pre/post navigation) =======
+        const processFlow = [
+            { key: 'authority_create', match: (l) => l.includes('authority') && (l.includes('creat') || l.includes('add') || l.includes('save')) && !l.includes('cost') && !l.includes('vendor') },
+            { key: 'authority_vendor', match: (l) => l.includes('vendor') || (l.includes('contract') && l.includes('map')) },
+            { key: 'rate_update',      match: (l) => l.includes('authority cost') || l.includes('rate config') || (l.includes('manage') && l.includes('cost')) },
+            { key: 'app_create',       match: (l) => l.includes('application') && (l.includes('creat') || l.includes('generat') || l.includes('draft')) },
+            { key: 'app_span_split',   match: (l) => (l.includes('span') && l.includes('split')) || l.includes('update authority') },
+            { key: 'app_span_mapping', match: (l) => l.includes('span') && (l.includes('map') || l.includes('multiple')) },
+            { key: 'app_ack',          match: (l) => l.includes('acknowledgement') || (l.includes('ack') && !l.includes('back')) },
+            { key: 'app_survey',       match: (l) => l.includes('survey') },
+            { key: 'app_fee',          match: (l) => l.includes('processing fee') || l.includes('application fee') || (l.includes('fee') && l.includes('applic')) },
+            { key: 'dn_creation',      match: (l) => l.includes('demand note') || l.includes('dn creat') || l.includes('demand note creat') },
+            { key: 'dn_approval',      match: (l) => (l.includes('dn') || l.includes('demand')) && (l.includes('approv') || l.includes('payment')) }
+        ];
+
+        function findFlowNavigation(lower) {
+            const isAfter  = /\b(after|next|post|then|following|once|completed|done|finish|later)\b/.test(lower);
+            const isBefore = /\b(before|previous|prior|pre|preceding)\b/.test(lower);
+
+            if (!isAfter && !isBefore) return null;
+
+            for (let i = 0; i < processFlow.length; i++) {
+                if (processFlow[i].match(lower)) {
+                    if (isAfter  && i < processFlow.length - 1) return processFlow[i + 1].key;
+                    if (isBefore && i > 0)                      return processFlow[i - 1].key;
+                    return null;
+                }
+            }
+            return null;
+        }
+
         // ==================== TEXT INPUT HANDLER ====================
         function handleUserInput() {
             const text = userInput.value.trim();
@@ -1143,6 +1174,13 @@
             appendMessage(text, false);
             userInput.value = '';
             const lower = text.toLowerCase();
+
+            // Check for pre/post navigation questions
+            const navResult = findFlowNavigation(lower);
+            if (navResult) {
+                handleAction(navResult, null);
+                return;
+            }
 
             if (lower.includes('access') || lower.includes('login') || lower.includes('register') || lower.includes('sign up')) {
                 handleAction('get_access', null);
@@ -1165,7 +1203,7 @@
             } else if (lower.includes('rate') || lower.includes('cost') || lower.includes('methodology')) {
                 handleAction('rate_update', null);
             } else if (lower.includes('application') && (lower.includes('creat') || lower.includes('generat') || lower.includes('draft'))) {
-                handleAction('application', null);
+                handleAction('app_create', null);
             } else if (lower.includes('span') && (lower.includes('map') || lower.includes('multiple authorit'))) {
                 handleAction('app_span_mapping', null);
             } else if (lower.includes('span') && (lower.includes('split') || lower.includes('update'))) {
