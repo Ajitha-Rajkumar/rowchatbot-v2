@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jio ROW & Demand Note Assistant</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- No external dependencies - fully self-contained for intranet -->
     <style>
         :root {
             --bg-primary: #ffffff;
@@ -66,7 +65,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: var(--body-bg);
             min-height: 100vh;
             display: flex;
@@ -223,7 +222,7 @@
             background: var(--tip-bg); border: 1px solid var(--tip-border); border-radius: 8px;
             padding: 7px 10px; margin-top: 6px; font-size: 12px; display: flex; align-items: flex-start; gap: 7px;
         }
-        .msg-bubble .tip-box i { color: #ff991f; margin-top: 2px; }
+        .msg-bubble .tip-box { font-size: 12px; }
 
         .msg-bubble .info-box {
             background: var(--info-bg); border: 1px solid var(--info-border); border-radius: 8px;
@@ -277,19 +276,19 @@
             display: inline-flex; align-items: center; gap: 6px; padding: 8px 13px;
             background: var(--bg-primary); border: 1.5px solid var(--accent); border-radius: 20px;
             font-size: 12px; font-weight: 500; color: var(--accent); cursor: pointer;
-            transition: all 0.2s; font-family: 'Inter', sans-serif;
+            transition: all 0.2s; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .quick-btn:hover {
             background: var(--accent); color: #fff;
             transform: translateY(-1px); box-shadow: 0 3px 12px rgba(0,120,212,0.3);
         }
-        .quick-btn i { font-size: 11px; }
+        .quick-btn { font-size: 12px; }
 
         .sub-buttons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
         .sub-btn {
             padding: 6px 12px; background: var(--bg-card); border: 1px solid var(--border);
             border-radius: 8px; font-size: 11.5px; color: var(--text-secondary); cursor: pointer;
-            transition: all 0.2s; font-family: 'Inter', sans-serif; font-weight: 500;
+            transition: all 0.2s; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 500;
         }
         .sub-btn:hover { background: var(--tag-bg); border-color: var(--accent); color: var(--accent); }
 
@@ -310,7 +309,7 @@
         }
         .chat-input-area input {
             flex: 1; border: 1.5px solid var(--input-border); border-radius: 12px;
-            padding: 10px 14px; font-size: 13px; font-family: 'Inter', sans-serif;
+            padding: 10px 14px; font-size: 13px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text-primary); background: var(--input-bg); outline: none; transition: all 0.2s;
         }
         .chat-input-area input:focus { border-color: var(--accent); }
@@ -341,15 +340,15 @@
                 <p><span class="online-dot"></span> Online — ROW & Demand Note</p>
             </div>
             <div class="header-actions">
-                <button class="header-btn" onclick="goBack()" title="Back"><i class="fas fa-arrow-left"></i></button>
-                <button class="header-btn" onclick="clearChat()" title="Clear Chat"><i class="fas fa-trash-can"></i></button>
-                <button class="header-btn" onclick="toggleTheme()" title="Toggle Dark/Light" id="themeBtn"><i class="fas fa-moon"></i></button>
+                <button class="header-btn" onclick="goBack()" title="Back">←</button>
+                <button class="header-btn" onclick="clearChat()" title="Clear Chat">🗑️</button>
+                <button class="header-btn" onclick="toggleTheme()" title="Toggle Dark/Light" id="themeBtn">🌙</button>
             </div>
         </div>
         <div class="chat-messages" id="chatMessages"></div>
         <div class="chat-input-area">
             <input type="text" id="userInput" placeholder="Type a question..." autocomplete="off">
-            <button class="send-btn" onclick="handleUserInput()"><i class="fas fa-paper-plane"></i></button>
+            <button class="send-btn" onclick="handleUserInput()">➤</button>
         </div>
     </div>
 
@@ -397,7 +396,7 @@
 
 <div class="step-card"><div class="step-row"><span class="step-num">4</span><span>Confirmation message displayed: <strong>"Authority Saved Successfully"</strong>.</span></div></div>
 
-<div class="tip-box"><i class="fas fa-lightbulb"></i><span>After saving, the authority must be mapped to GL Code & Contract Type. See <strong>Vendor Contract Mapping</strong>.</span></div>`,
+<div class="tip-box">💡<span>After saving, the authority must be mapped to GL Code & Contract Type. See <strong>Vendor Contract Mapping</strong>.</span></div>`,
                 sub_options: [
                     { label: "Vendor Contract Mapping", action: "authority_vendor" },
                     { label: "Manage Authority Cost", action: "rate_update" },
@@ -491,7 +490,7 @@
 
 <div class="step-card"><div class="step-row"><span class="step-num">6</span><span>A success message appears with the <strong>Application ID</strong>. Click OK.</span></div></div>
 
-<div class="tip-box"><i class="fas fa-lightbulb"></i><span>Spans can be <strong>split</strong>, <strong>authority updated</strong>, or <strong>applications merged</strong> before generating the final application.</span></div>
+<div class="tip-box">💡<span>Spans can be <strong>split</strong>, <strong>authority updated</strong>, or <strong>applications merged</strong> before generating the final application.</span></div>
 
 <br><strong>Merge Applications</strong><br><span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2 (Web)</span>
 
@@ -501,7 +500,7 @@
 
 <div class="step-card"><div class="step-row"><span class="step-num">9</span><span>Click the <strong>Merge</strong> option to combine them into a single application and generate the final application.</span></div></div>
 
-<div class="tip-box"><i class="fas fa-lightbulb"></i><span>Merging is useful when multiple span segments under the same authority need to be submitted as a single application.</span></div>
+<div class="tip-box">💡<span>Merging is useful when multiple span segments under the same authority need to be submitted as a single application.</span></div>
 
 <br><strong>Application Acknowledgement</strong><br><span class="role-tag">Role: ROW Executive</span> &nbsp; <span class="role-tag">System: K2 (Web)</span>
 
@@ -527,7 +526,7 @@
 <li>Remarks</li>
 </ul><strong>Submit</strong></span></div></div>
 
-<div class="tip-box"><i class="fas fa-lightbulb"></i><span>If application processing fee is not required, the flow ends here after Joint Survey findings are updated in K2.</span></div>`,
+<div class="tip-box">💡<span>If application processing fee is not required, the flow ends here after Joint Survey findings are updated in K2.</span></div>`,
                 sub_options: [
                     { label: "Update Authority / Span Split", action: "app_span_split" },
                     { label: "Map SPAN to Multiple Authorities", action: "app_span_mapping" },
@@ -596,7 +595,7 @@
 
 <div class="step-card"><div class="step-row"><span class="step-num">3</span><span>Click the <strong>Merge</strong> option to combine them into a single application and generate the final application.</span></div></div>
 
-<div class="tip-box"><i class="fas fa-lightbulb"></i><span>Merging is useful when multiple span segments under the same authority need to be submitted as a single application.</span></div>`,
+<div class="tip-box">💡<span>Merging is useful when multiple span segments under the same authority need to be submitted as a single application.</span></div>`,
                 sub_options: [
                     { label: "Create ROW Application", action: "app_create" },
                     { label: "Application Acknowledgement", action: "app_ack" },
@@ -635,7 +634,7 @@
 <li>Remarks</li>
 </ul><strong>Submit</strong></span></div></div>
 
-<div class="tip-box"><i class="fas fa-lightbulb"></i><span>If application processing fee is not required, the flow ends here after Joint Survey findings are updated in K2.</span></div>`,
+<div class="tip-box">💡<span>If application processing fee is not required, the flow ends here after Joint Survey findings are updated in K2.</span></div>`,
                 sub_options: [
                     { label: "Application Processing Fee", action: "app_fee" },
                     { label: "Application Acknowledgement", action: "app_ack" },
@@ -678,7 +677,7 @@
 <li>Review the rejection comments and rework the processing fee details</li>
 </ul><strong>Resubmit for approval</strong></span></div></div>
 
-<div class="tip-box"><i class="fas fa-lightbulb"></i><span>If application processing fee is not required, the flow ends after Joint Survey findings are updated in K2.</span></div>`,
+<div class="tip-box">💡<span>If application processing fee is not required, the flow ends after Joint Survey findings are updated in K2.</span></div>`,
                 sub_options: [
                     { label: "Create ROW Application", action: "app_create" },
                     { label: "Update Authority / Span Split", action: "app_span_split" },
@@ -1047,12 +1046,12 @@
 
         // ==================== MAIN MENU ====================
         const mainMenuOptions = [
-            { label: '<i class="fas fa-key"></i> Get Access', action: 'get_access' },
-            { label: '<i class="fas fa-building"></i> ROW Authority Creation & Rate Update', action: 'authority_rate' },
-            { label: '<i class="fas fa-file-lines"></i> ROW Application & Processing', action: 'application' },
-            { label: '<i class="fas fa-file-invoice"></i> Demand Note Creation', action: 'dn_creation' },
-            { label: '<i class="fas fa-check-double"></i> DN Approval & Payment', action: 'dn_approval' },
-            { label: '<i class="fas fa-book"></i> Roles & Glossary', action: 'roles_glossary' }
+            { label: '🔑 Get Access', action: 'get_access' },
+            { label: '🏢 ROW Authority Creation & Rate Update', action: 'authority_rate' },
+            { label: '📄 ROW Application & Processing', action: 'application' },
+            { label: '📋 Demand Note Creation', action: 'dn_creation' },
+            { label: '✅ DN Approval & Payment', action: 'dn_approval' },
+            { label: '📖 Roles & Glossary', action: 'roles_glossary' }
         ];
 
         // ==================== CHAT FUNCTIONS ====================
@@ -1061,7 +1060,7 @@
             msgDiv.className = `message ${isBot ? 'bot' : 'user'}`;
             const avatar = document.createElement('div');
             avatar.className = 'msg-avatar';
-            avatar.innerHTML = isBot ? '<img src="cable.jfif" alt="Bot">' : '<i class="fas fa-user"></i>';
+            avatar.innerHTML = isBot ? '<img src="cable.jfif" alt="Bot">' : '👤';
             const bubble = document.createElement('div');
             bubble.className = 'msg-bubble';
             bubble.innerHTML = content;
@@ -1211,10 +1210,10 @@
             const btn = document.getElementById('themeBtn');
             if (document.documentElement.getAttribute('data-theme') === 'dark') {
                 document.documentElement.removeAttribute('data-theme');
-                btn.innerHTML = '<i class="fas fa-moon"></i>';
+                btn.innerHTML = '🌙';
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
-                btn.innerHTML = '<i class="fas fa-sun"></i>';
+                btn.innerHTML = '☀️';
             }
         }
 
