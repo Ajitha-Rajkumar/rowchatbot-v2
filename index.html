@@ -3,61 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROW & Demand Note Assistant</title>
+    <title>Jio ROW & Demand Note Assistant</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
             --bg-primary: #ffffff;
-            --bg-secondary: #f7f8fa;
-            --bg-card: #f4f5f7;
-            --text-primary: #172b4d;
-            --text-secondary: #42526e;
-            --border: #e4e7eb;
-            --border-light: #ebecf0;
+            --bg-secondary: #f0f4f8;
+            --bg-card: #f0f4f8;
+            --text-primary: #0a1f44;
+            --text-secondary: #3a5078;
+            --border: #d0dae8;
+            --border-light: #e4ecf4;
             --bot-bubble: #ffffff;
-            --bot-bubble-border: #e4e7eb;
-            --user-bubble: linear-gradient(135deg, #0052cc, #0747a6);
-            --accent: #0052cc;
-            --accent-dark: #0747a6;
+            --bot-bubble-border: #d0dae8;
+            --user-bubble: linear-gradient(135deg, #0a2885, #1a3fa0);
+            --accent: #0a2885;
+            --accent-dark: #061a5e;
             --input-bg: #ffffff;
-            --input-border: #dfe1e6;
-            --tag-bg: #deebff;
-            --tag-color: #0052cc;
+            --input-border: #c0ccdd;
+            --tag-bg: #e0e8f5;
+            --tag-color: #0a2885;
             --tip-bg: #fffae6;
             --tip-border: #ffe380;
-            --info-bg: #e6fcff;
-            --info-border: #b3f5ff;
-            --step-bg: #f4f5f7;
-            --header-bg: linear-gradient(135deg, #0052cc 0%, #0747a6 100%);
-            --body-bg: linear-gradient(135deg, #0a1628 0%, #1a2a4a 50%, #0d1f3c 100%);
-            --shadow: 0 25px 60px rgba(0,0,0,0.4);
+            --info-bg: #e6f5fa;
+            --info-border: #b3dff0;
+            --step-bg: #eef2f8;
+            --header-bg: linear-gradient(135deg, #0a2885 0%, #122f8a 50%, #1a3fa0 100%);
+            --body-bg: linear-gradient(135deg, #040e2e 0%, #0a1f52 40%, #081840 100%);
+            --shadow: 0 25px 60px rgba(0,0,0,0.45);
+            --fiber-red: #e4002b;
+            --fiber-amber: #f5a623;
+            --fiber-cyan: #00b8d4;
         }
 
         [data-theme="dark"] {
-            --bg-primary: #1e1e2e;
-            --bg-secondary: #181825;
-            --bg-card: #313244;
-            --text-primary: #cdd6f4;
-            --text-secondary: #a6adc8;
-            --border: #45475a;
-            --border-light: #313244;
-            --bot-bubble: #1e1e2e;
-            --bot-bubble-border: #45475a;
-            --accent: #89b4fa;
-            --accent-dark: #74c7ec;
-            --input-bg: #313244;
-            --input-border: #45475a;
-            --tag-bg: #1e3a5f;
-            --tag-color: #89b4fa;
-            --tip-bg: #3a3000;
-            --tip-border: #665500;
-            --info-bg: #0a2a33;
-            --info-border: #1a4a5a;
-            --step-bg: #313244;
-            --header-bg: linear-gradient(135deg, #1e1e2e 0%, #181825 100%);
-            --body-bg: linear-gradient(135deg, #11111b 0%, #181825 100%);
-            --shadow: 0 25px 60px rgba(0,0,0,0.7);
+            --bg-primary: #0f1a30;
+            --bg-secondary: #0a1324;
+            --bg-card: #162040;
+            --text-primary: #c8d6f0;
+            --text-secondary: #8a9ec0;
+            --border: #2a3a5a;
+            --border-light: #1a2a48;
+            --bot-bubble: #0f1a30;
+            --bot-bubble-border: #2a3a5a;
+            --accent: #6b8fd4;
+            --accent-dark: #5a7fc0;
+            --input-bg: #162040;
+            --input-border: #2a3a5a;
+            --tag-bg: #1a2e5a;
+            --tag-color: #6b8fd4;
+            --tip-bg: #2a2200;
+            --tip-border: #554400;
+            --info-bg: #0a2030;
+            --info-border: #1a3a50;
+            --step-bg: #162040;
+            --header-bg: linear-gradient(135deg, #061a50 0%, #0a2270 100%);
+            --body-bg: linear-gradient(135deg, #020a1e 0%, #06112e 100%);
+            --shadow: 0 25px 60px rgba(0,0,0,0.75);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -71,7 +74,27 @@
             justify-content: center;
             padding: 20px;
             transition: background 0.3s;
+            position: relative;
+            overflow: hidden;
         }
+
+        /* Fiber optic strands background decoration */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -20%;
+            width: 140%;
+            height: 200%;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(228,0,43,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 30%, rgba(0,184,212,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(245,166,35,0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body > * { position: relative; z-index: 1; }
 
         .chatbot-container {
             width: 100%;
@@ -83,8 +106,9 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow), 0 0 40px rgba(10,40,133,0.15);
             transition: background 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(10,40,133,0.08);
         }
 
         /* Header */
@@ -95,28 +119,49 @@
             align-items: center;
             gap: 12px;
             position: relative;
-            border-bottom: 1px solid var(--border);
+            border-bottom: none;
+        }
+
+        /* Fiber accent stripes below header */
+        .chat-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg,
+                #e4002b 0%, #e4002b 33%,
+                #f5a623 33%, #f5a623 66%,
+                #00b8d4 66%, #00b8d4 100%);
         }
 
         .bot-avatar {
-            width: 40px; height: 40px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 12px;
+            width: 42px; height: 42px;
+            background: #ffffff;
+            border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 18px; color: #fff; flex-shrink: 0;
-            border: 1px solid rgba(255,255,255,0.2);
+            flex-shrink: 0;
+            border: 2px solid rgba(255,255,255,0.3);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .bot-avatar .jio-logo {
+            width: 36px; height: 36px;
         }
 
         [data-theme="dark"] .bot-avatar {
-            background: rgba(137,180,250,0.15);
-            border-color: rgba(137,180,250,0.3);
+            background: #1a2a50;
+            border-color: rgba(107,143,212,0.3);
         }
 
         .header-info { flex: 1; }
-        .header-info h1 { color: #fff; font-size: 15px; font-weight: 600; }
-        [data-theme="dark"] .header-info h1 { color: #cdd6f4; }
-        .header-info p { color: rgba(255,255,255,0.7); font-size: 11.5px; margin-top: 1px; display: flex; align-items: center; gap: 5px; }
-        [data-theme="dark"] .header-info p { color: #a6adc8; }
+        .header-info h1 { color: #fff; font-size: 15px; font-weight: 600; letter-spacing: 0.3px; }
+        .header-info h1 .jio-text { font-weight: 700; }
+        [data-theme="dark"] .header-info h1 { color: #c8d6f0; }
+        .header-info p { color: rgba(255,255,255,0.75); font-size: 11.5px; margin-top: 2px; display: flex; align-items: center; gap: 5px; }
+        [data-theme="dark"] .header-info p { color: #8a9ec0; }
 
         .online-dot { width: 6px; height: 6px; background: #36b37e; border-radius: 50%; animation: pulse 2s infinite; }
         @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
@@ -130,7 +175,7 @@
             transition: all 0.2s;
         }
         .header-btn:hover { background: rgba(255,255,255,0.22); }
-        [data-theme="dark"] .header-btn { background: rgba(137,180,250,0.1); border-color: rgba(137,180,250,0.2); color: #cdd6f4; }
+        [data-theme="dark"] .header-btn { background: rgba(107,143,212,0.1); border-color: rgba(107,143,212,0.2); color: #c8d6f0; }
 
         /* Chat Messages */
         .chat-messages {
@@ -152,8 +197,8 @@
             flex-shrink: 0; font-size: 13px;
         }
         .message.bot .msg-avatar { background: var(--accent); color: #fff; }
-        [data-theme="dark"] .message.bot .msg-avatar { background: #313244; color: #89b4fa; }
-        .message.user .msg-avatar { background: #6554c0; color: #fff; }
+        [data-theme="dark"] .message.bot .msg-avatar { background: #162040; color: #6b8fd4; }
+        .message.user .msg-avatar { background: #1a3fa0; color: #fff; }
 
         .msg-bubble {
             max-width: 84%; padding: 11px 14px; border-radius: 14px;
@@ -215,7 +260,7 @@
         }
         .quick-btn:hover {
             background: var(--accent); color: #fff;
-            transform: translateY(-1px); box-shadow: 0 3px 10px rgba(0,82,204,0.25);
+            transform: translateY(-1px); box-shadow: 0 3px 12px rgba(10,40,133,0.3);
         }
         .quick-btn i { font-size: 11px; }
 
@@ -256,7 +301,7 @@
             cursor: pointer; display: flex; align-items: center; justify-content: center;
             transition: all 0.2s; flex-shrink: 0;
         }
-        .send-btn:hover { transform: scale(1.05); box-shadow: 0 3px 10px rgba(0,82,204,0.35); }
+        .send-btn:hover { transform: scale(1.05); box-shadow: 0 3px 12px rgba(10,40,133,0.4); }
 
         @media (max-width: 560px) {
             body { padding: 0; }
@@ -267,10 +312,15 @@
 <body>
     <div class="chatbot-container" id="chatContainer">
         <div class="chat-header">
-            <div class="bot-avatar"><i class="fas fa-road"></i></div>
+            <div class="bot-avatar">
+                <svg class="jio-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="50" fill="#0A2885"/>
+                    <text x="50" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="42" fill="#ffffff">Jio</text>
+                </svg>
+            </div>
             <div class="header-info">
-                <h1>ROW & Demand Note Assistant</h1>
-                <p><span class="online-dot"></span> Online</p>
+                <h1><span class="jio-text">Jio</span> Fiber ROW Assistant</h1>
+                <p><span class="online-dot"></span> Online — ROW & Demand Note</p>
             </div>
             <div class="header-actions">
                 <button class="header-btn" onclick="goBack()" title="Back"><i class="fas fa-arrow-left"></i></button>
