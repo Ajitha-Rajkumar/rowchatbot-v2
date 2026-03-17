@@ -1061,7 +1061,7 @@
             msgDiv.className = `message ${isBot ? 'bot' : 'user'}`;
             const avatar = document.createElement('div');
             avatar.className = 'msg-avatar';
-            avatar.innerHTML = isBot ? '<img src="workercartoon.png" alt="Bot">' : '<i class="fas fa-user"></i>';
+            avatar.innerHTML = isBot ? '<img src="cable.jfif" alt="Bot">' : '<i class="fas fa-user"></i>';
             const bubble = document.createElement('div');
             bubble.className = 'msg-bubble';
             bubble.innerHTML = content;
@@ -1094,7 +1094,7 @@
                 msgDiv.className = 'message bot';
                 const avatar = document.createElement('div');
                 avatar.className = 'msg-avatar';
-                avatar.innerHTML = '<img src="workercartoon.png" alt="Bot">';
+                avatar.innerHTML = '<img src="cable.jfif" alt="Bot">';
                 const bubble = document.createElement('div');
                 bubble.className = 'msg-bubble';
                 const btnContainer = document.createElement('div');
@@ -1120,7 +1120,7 @@
             msgDiv.className = 'message bot'; msgDiv.id = 'typingIndicator';
             const avatar = document.createElement('div');
             avatar.className = 'msg-avatar';
-            avatar.innerHTML = '<img src="workercartoon.png" alt="Bot">';
+            avatar.innerHTML = '<img src="cable.jfif" alt="Bot">';
             const bubble = document.createElement('div');
             bubble.className = 'msg-bubble';
             bubble.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
@@ -1179,8 +1179,9 @@
                         <img src="logo.png" alt="Jio">
                         About ROW Application
                     </div>
-                    The <strong>ROW (Right of Way)</strong> Application is a web-based module within the <strong>Infra Build</strong> platform (Jio Digital Life) that enables ROW Executives to create, manage, and submit Right of Way applications for fiber optic network deployments. The application integrates with <strong>K2</strong> workflow engine, <strong>GIS</strong> (Geographic Information System) for geographic span management and <strong>SAP</strong> for payment to authorities.<br><br>
-                    This chatbot provides a comprehensive step-by-step guide covering the complete lifecycle of a ROW Application — from initial creation through span management, application merging, submission, joint survey, and processing fee capture.`;
+                    The <strong>ROW (Right of Way)</strong> is a web-based module in <strong>JIO Infra Build</strong> platform that enables to create, manage, and submit right of way applications for fiber optic network deployments to different authorities in PAN India.<br><br>
+                    The application integrates with <strong>K2</strong> workflow engine, <strong>GIS</strong> (Geographic Information System) for span data and <strong>SAP</strong> for payments.<br><br>
+                    This chatbot serves as a dedicated assistant, offering a step-by-step guide through the entire ROW lifecycle, including ROW application creation, processing, and payment.`;
                 chatMessages.appendChild(aboutCard);
             }
             addMessage(`Welcome! Please choose a topic below or type a question.`, true, true, () => {
